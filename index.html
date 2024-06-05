@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Clone</title>
+    <style>
+        /* Estilos CSS aqui */
+    </style>
+</head>
+<body>
+    <div id="chat-window">
+        <div id="messages">
+            <!-- Aqui vão as mensagens -->
+        </div>
+        <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById('message-input');
+            var message = messageInput.value;
+            
+            if (message.trim() !== '') {
+                var messageElement = document.createElement('div');
+                messageElement.innerText = message;
+                document.getElementById('messages').appendChild(messageElement);
+                
+                // Limpa o campo de entrada
+                messageInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
